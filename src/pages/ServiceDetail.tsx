@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getServiceById } from '../data/services';
+import { getServicesByCategory } from '../data/services';
 import FeatureItem from '../components/FeatureItem';
 import { ArrowLeft } from 'lucide-react';
 
