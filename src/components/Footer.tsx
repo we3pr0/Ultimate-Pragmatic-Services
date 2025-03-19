@@ -45,10 +45,10 @@ const Footer = () => {
                 <Phone className="h-4 w-4 mr-2" />
                 <span>+447988646076 (WhatsApp)</span>
               </li>
-              <li className="flex items-center text-gray-400 text-sm">
+              {/* <li className="flex items-center text-gray-400 text-sm">
                 <Phone className="h-4 w-4 mr-2" />
                 <span>7797752836 (USA)</span>
-              </li>
+              </li> */}
               <li className="flex items-center text-gray-400 text-sm">
                 <Mail className="h-4 w-4 mr-2" />
                 <span>info@ultimatepragmaticservices.com</span>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, PresentationIcon, BarChart2, Search, ArrowRight } from 'lucide-react';
+import { FileText, PresentationIcon, BarChart2, Search, ArrowRight, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
 import HowItWorks from '../components/HowItWorks';
+import Roadmap from '../components/Roadmap';
 import '../styles/testimonials.css';
+import imageSrc from '../photos/roadmap.png';
 
 const HomePage = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -171,6 +173,57 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+            <br />
+            <br />
+      {/* Why Choose Us */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Why Choose Us</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Realistic Projection */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+              <CheckCircle className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Realistic Projection</h3>
+            <p className="text-gray-600">
+              We provide realistic projections backed by data, ensuring your business plans are both achievable and credible.
+            </p>
+          </div>
+
+          {/* We Know Your Audience */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+              <Users className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">We Know Your Audience</h3>
+            <p className="text-gray-600">
+              We understand what investors, regulators, and business professionals look for in business plans and presentations.
+            </p>
+          </div>
+
+          {/* First-Hand Experience */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+              <Award className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">First-Hand Experience</h3>
+            <p className="text-gray-600">
+              Our team members have founded their own businesses and have been in your shoes, giving us unique insights.
+            </p>
+          </div>
+
+          {/* Free After-Sales Services */}
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+              <TrendingUp className="h-6 w-6" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Free After-Sales Services</h3>
+            <p className="text-gray-600">
+              We offer free after-sales support to ensure your business plans and strategies are implemented successfully.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Testimonials */}
       <section className="py-16 bg-white">
@@ -208,6 +261,14 @@ const HomePage = () => {
 
       {/* How It Works */}
       <HowItWorks />
+
+      {/* Roadmap */}
+      
+      <img
+                src={imageSrc}
+                alt="Our Approach"
+                className="w-full h-full object-cover"
+              />
 
       {/* CTA Section */}
       <section className="bg-indigo-700 text-white py-16">

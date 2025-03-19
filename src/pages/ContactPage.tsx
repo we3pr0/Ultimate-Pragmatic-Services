@@ -30,7 +30,7 @@ const ContactPage = () => {
                     <div className="ml-4">
                       <p className="text-lg font-medium text-gray-900">Phone</p>
                       <p className="text-gray-600">+447988646076 (WhatsApp)</p>
-                      <p className="text-gray-600">7797752836 (USA)</p>
+                      {/* <p className="text-gray-600">7797752836 (USA)</p> */}
                     </div>
                   </div>
                   
@@ -67,12 +67,22 @@ const ContactPage = () => {
                 <p className="text-gray-600 mb-6">
                   Our expert consultants are available to answer your questions and provide insights on how we can help your business succeed.
                 </p>
-                <a 
-                  href="tel:+447988646076" 
-                  className="inline-block px-6 py-3 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition-colors"
-                >
-                  Call Now
-                </a>
+                <div className="flex gap-4">
+                  <a 
+                    href="tel:+447988646076" 
+                    className="inline-block px-6 py-3 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition-colors"
+                  >
+                    Call Now
+                  </a>
+                  <a 
+                    href="https://wa.me/447988646076?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20Ultimate%20Pragmatic%20Services." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-3 bg-green-600 text-white rounded-md font-medium hover:bg-green-700 transition-colors"
+                  >
+                    Message on WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -110,14 +120,14 @@ const ContactPage = () => {
                 <div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Do you offer post-delivery support?</h3>
                   <p className="text-gray-600">
-                    Yes, we provide free post-sales support for 2-3 weeks depending on the service, to help with any questions or minor adjustments needed.
+                    Yes, we provide free post-sales support for 1 month, to help with any questions or minor adjustments needed.
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Can you help with SBA loan applications?</h3>
                   <p className="text-gray-600">
-                    Yes, we specialize in creating business plans optimized for SBA loans and have helped clients secure over $500,000 in SBA loans in the past 6 months.
+                    Yes, we specialize in creating business plans optimized for SBA loans and have helped clients secure over 2.8 million in SBA loans in the past 6 months.
                   </p>
                 </div>
                 

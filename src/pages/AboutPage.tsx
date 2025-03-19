@@ -48,52 +48,6 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Why Choose Us */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
-                <CheckCircle className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Expert Analysis</h3>
-              <p className="text-gray-600">
-                Our business plans make sense by calculating reliable estimates, outlining feasible plans, and supporting claims with data.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
-                <Users className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">We Know Your Audience</h3>
-              <p className="text-gray-600">
-                We understand what investors, regulators, and business professionals look for in business plans and presentations.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
-                <Award className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">First-Hand Experience</h3>
-              <p className="text-gray-600">
-                Our team members have founded their own businesses and have been in your shoes, giving us unique insights.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
-                <TrendingUp className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Turnaround</h3>
-              <p className="text-gray-600">
-                Business plan and pitch deck consulting is our full-time job, and your project is our priority.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Our Approach */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2">

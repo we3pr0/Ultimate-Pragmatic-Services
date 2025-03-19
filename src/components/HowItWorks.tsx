@@ -2,36 +2,36 @@ import React from 'react';
 import { ClipboardList, BarChart, MessageSquare, FileCheck, FileText } from 'lucide-react';
 
 const steps = [
-  {
-    id: 1,
-    title: 'Order',
-    description: 'Request a business plan using our form. A consultant will contact you within 2-3 hours to discuss your project in detail.',
-    icon: <ClipboardList className="h-8 w-8 text-indigo-600" />
-  },
-  {
-    id: 2,
-    title: 'Project Roadmap',
-    description: 'After discussing your project details, we prepare a roadmap outlining our approach, team details, timing, deliverables, and service fees.',
-    icon: <BarChart className="h-8 w-8 text-indigo-600" />
-  },
-  {
-    id: 3,
-    title: 'Progress Reports',
-    description: 'As we work on your project, we provide weekly progress updates with key details and address any issues requiring clarification.',
-    icon: <MessageSquare className="h-8 w-8 text-indigo-600" />
-  },
-  {
-    id: 4,
-    title: 'First Draft Delivery',
-    description: 'Our consultants provide an initial project draft with all approved deliverables for your review and feedback.',
-    icon: <FileCheck className="h-8 w-8 text-indigo-600" />
-  },
-  {
-    id: 5,
-    title: 'Final Report Delivery',
-    description: 'After implementing your feedback and making necessary improvements, we deliver the final project report.',
-    icon: <FileText className="h-8 w-8 text-indigo-600" />
-  }
+  // {
+  //   id: 1,
+  //   title: 'Order',
+  //   description: 'Request a business plan using our form. A consultant will contact you within 2-3 hours to discuss your project in detail.',
+  //   icon: <ClipboardList className="h-8 w-8 text-indigo-600" />
+  // },
+  // {
+  //   id: 2,
+  //   title: 'Project Roadmap',
+  //   description: 'After a client briefing meeting, you will receive a quote. A 50% Payment of the Quote would be required to kick off the project.',
+  //   icon: <BarChart className="h-8 w-8 text-indigo-600" />
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Progress Reports',
+  //   description: 'As we work on your project, we provide weekly progress updates with key details and address any issues requiring clarification.',
+  //   icon: <MessageSquare className="h-8 w-8 text-indigo-600" />
+  // },
+  // {
+  //   id: 4,
+  //   title: 'First Draft Delivery',
+  //   description: 'Our consultants provide an initial project draft with all approved deliverables for your review and feedback.',
+  //   icon: <FileCheck className="h-8 w-8 text-indigo-600" />
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Final Report Delivery',
+  //   description: 'After implementing your feedback and making necessary improvements, we deliver the final project report.',
+  //   icon: <FileText className="h-8 w-8 text-indigo-600" />
+  // }
 ];
 
 const HowItWorks = () => {
@@ -52,7 +52,7 @@ const HowItWorks = () => {
             {/* Connecting line */}
             <div className="hidden md:block absolute top-0 left-1/2 w-0.5 h-full -ml-px bg-indigo-200"></div>
             
-            <div className="space-y-16">
+            {/* <div className="space-y-16">
               {steps.map((step, index) => (
                 <div key={step.id} className={`relative ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   <div className="md:flex items-center md:space-x-4">
@@ -75,7 +75,7 @@ const HowItWorks = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
         
