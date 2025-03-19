@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, PresentationIcon, BarChart2, Search, ArrowRight } from 'lucide-react';
 import { services } from '../data/services';
@@ -6,8 +6,11 @@ import { testimonials } from '../data/testimonials';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
 import HowItWorks from '../components/HowItWorks';
+import '../styles/testimonials.css';
 
 const HomePage = () => {
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
   // Get featured services (one from each category)
   const categories = ['Business Plan', 'Pitch Deck', 'Financial Model', 'Feasibility Study'];
   const featuredServices = categories.map(category => 
@@ -15,7 +18,15 @@ const HomePage = () => {
   ).filter(Boolean);
 
   // Get featured testimonials
-  const featuredTestimonials = testimonials.slice(0, 3);
+  const featuredTestimonials = testimonials;
+
+  // Automatically change the testimonial every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonialIndex((prevIndex) => (prevIndex + 1) % featuredTestimonials.length);
+    }, 5000); // 5 seconds
+    return () => clearInterval(interval);
+  }, [featuredTestimonials.length]);
 
   return (
     <div>
@@ -173,16 +184,24 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredTestimonials.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.id}
-                quote={testimonial.quote}
-                author={testimonial.author}
-                company={testimonial.company}
-                rating={testimonial.rating}
-              />
-            ))}
+          <div className="relative w-full max-w-lg mx-auto">
+            <div className="testimonial-flip-container">
+              {featuredTestimonials.map((testimonial, index) => (
+                <div
+                  key={testimonial.id}
+                  className={`testimonial-flip-card ${
+                    index === currentTestimonialIndex ? 'visible' : ''
+                  }`}
+                >
+                  <TestimonialCard
+                    quote={testimonial.quote}
+                    author={testimonial.author}
+                    company={testimonial.company}
+                    rating={testimonial.rating}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
