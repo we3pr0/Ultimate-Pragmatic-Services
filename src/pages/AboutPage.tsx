@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
-import imageSrc from '../photos/sean-pollock-PhYq704ffdA-unsplash.jpg';
+import imageSrcStory from '../photos/sean-pollock-PhYq704ffdA-unsplash.jpg';
+import imageSrcApproach from '../photos/randy-fath-G1yhU1Ej-9A-unsplash.jpg';
 
 const AboutPage = () => {
   return (
@@ -39,7 +40,7 @@ const AboutPage = () => {
       
 
       <img
-        src={imageSrc}
+        src={imageSrcStory}
         alt="Our Story"
         className="w-full h-full object-cover"
       />
@@ -99,7 +100,7 @@ const AboutPage = () => {
             {/* Image */}
             <div className="relative">
               <img
-                src="src/photos/randy-fath-G1yhU1Ej-9A-unsplash.jpg" // Replace with your image URL
+                src={imageSrcApproach}
                 alt="Our Approach"
                 className="w-full h-full object-cover"
               />
