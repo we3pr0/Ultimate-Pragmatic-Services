@@ -1,5 +1,5 @@
 import React from 'react';
-import { getServicesByCategory } from '../data/services';
+import { getServicesByCategory, services } from '../data/services';
 import ServiceCard from '../components/ServiceCard';
 
 const ServicesPage = () => {
@@ -29,6 +29,7 @@ const ServicesPage = () => {
                   title={service.title}
                   description={service.description.substring(0, 150) + '...'}
                   icon={<service.icon className="h-6 w-6" />}
+                  image={service.image}
                 />
               ))}
             </div>

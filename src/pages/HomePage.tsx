@@ -8,7 +8,7 @@ import TestimonialCard from '../components/TestimonialCard';
 import HowItWorks from '../components/HowItWorks';
 import Roadmap from '../components/Roadmap';
 import '../styles/testimonials.css';
-import imageSrc from '../photos/roadmap.png';
+import imageSrc from '../photos/Roadmapp.png';
 
 const HomePage = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);

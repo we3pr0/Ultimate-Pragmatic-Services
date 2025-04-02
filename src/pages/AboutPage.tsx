@@ -40,7 +40,7 @@ const AboutPage = () => {
       
 
       <img
-        src={imageSrcStory}
+        src="https://as2.ftcdn.net/v2/jpg/01/60/55/69/1000_F_160556920_A3An83NX66D3nOn19v18yCLVTqh3lDLm.jpghttps://as2.ftcdn.net/v2/jpg/02/31/70/07/1000_F_231700737_HJey4izHbNAOrS2eTZkxA4XJr3akMpNT.jpghttps://as2.ftcdn.net/v2/jpg/01/19/05/41/1000_F_119054138_40ip9kSEiH7Wgit6K0ulSmwUvyxxw6Vq.jpg"
         alt="Our Story"
         className="w-full h-full object-cover"
       />
@@ -78,7 +78,7 @@ const AboutPage = () => {
         {/* CTA Section */}
         <div className="bg-indigo-700 rounded-lg shadow-lg overflow-hidden text-white">
           <div className="p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">TRUST THE EXPERTS AT ULTIMATE PRAGMATIC SERVICES</h2>
+            {/* <h2 className="text-2xl font-bold mb-4">TRUST THE EXPERTS AT ULTIMATE PRAGMATIC SERVICES</h2> */}
             <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
             Your trusted partner for business plans and financial advisory needs.
             </p>

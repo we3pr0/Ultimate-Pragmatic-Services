@@ -46,6 +46,15 @@ const ServiceDetail = () => {
               </div>
             </div>
 
+            {/* Add illustrative image */}
+            {service.image && (
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+            )}
+
             <h2 className="text-xl font-semibold text-gray-900 mb-4">{service.heading}</h2>
             
             <div className="prose max-w-none mb-8">
@@ -88,6 +97,14 @@ const ServiceDetail = () => {
                 .slice(0, 3)
                 .map(relatedService => (
                   <div key={relatedService.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                    {/* Add illustrative image for related services */}
+                    {relatedService.image && (
+                      <img 
+                        src={relatedService.image} 
+                        alt={relatedService.title} 
+                        className="w-full h-40 object-cover"
+                      />
+                    )}
                     <div className="p-6">
                       <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
                         <relatedService.icon className="h-5 w-5" />
