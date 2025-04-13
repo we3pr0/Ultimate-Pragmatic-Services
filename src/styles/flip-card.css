@@ -2,10 +2,86 @@
   perspective: 1000px;
 }
 
+/* Card Container */
+.flip-card-container {
+  perspective: 1500px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Card */
 .flip-card {
   position: relative;
   width: 100%;
   height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Hover effect */
+.flip-card-container:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* Card sides */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: #fff;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #fff;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Content styling */
+.flip-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+/* Hover animations */
+.flip-card-front .flip-card-content {
+  transform: translateZ(60px);
+  transition: transform 0.3s ease;
+}
+
+.flip-card-container:hover .flip-card-front .flip-card-content {
+  transform: translateZ(70px);
+}
+
+/* Card elevation */
+.flip-card-container::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.flip-card-container:hover::after {
+  opacity: 1;
 }
 
 .flip-card-inner {

@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#f0f5ff',
-          100: '#e0eaff',
-          200: '#c7d7fe',
-          300: '#a4bdfc',
-          400: '#819cf8',
-          500: '#647ef3',
-          600: '#4b61e5',
-          700: '#3e4ecd',
-          800: '#3542a5',
-          900: '#2f3b82',
+          50: '#e6f3ff',
+          100: '#cce7ff',
+          200: '#99ccff',
+          300: '#66b3ff',
+          400: '#3399ff',
+          500: '#007ACC',
+          600: '#0066b3',
+          700: '#005999',
+          800: '#004d80',
+          900: '#004066',
         },
         secondary: {
           50: '#f8fafc',
@@ -44,5 +44,6 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

@@ -1,97 +1,161 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
-import imageSrcStory from '../photos/sean-pollock-PhYq704ffdA-unsplash.jpg';
-import imageSrcApproach from '../photos/randy-fath-G1yhU1Ej-9A-unsplash.jpg';
+import { Users, Award, TrendingUp, Target, Globe, Shield } from 'lucide-react';
 
 const AboutPage = () => {
   return (
-    <div className="bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
+    <div className="bg-secondary-50">
+      {/* Hero Section */}
+      <div className="relative bg-primary-900 py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-800 to-primary-900" />
+          <div className="absolute inset-0 bg-grid-white/[0.1]" style={{ 
+            backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '4rem 4rem'
+          }} />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl font-display font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            About Us
+          </h1>
+          <p className="mt-6 max-w-2xl mx-auto text-xl text-primary-100">
+            Empowering businesses worldwide with expert consulting and strategic guidance.
+          </p>
+        </div>
+      </div>
 
-        {/* About Us Content */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-        {/* Text Content */}
-          <div className="p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <div className="prose max-w-none text-gray-600">
-              <p className="mb-4">
-              At Ultimate Pragmatic Services (UPS), we don’t just offer consulting—we drive business success. Since our inception in 2018, we have been a trusted partner for businesses worldwide, delivering expert business management consulting and financial advisory services that transform visions into reality.
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        {/* Our Story */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
+          <div>
+            <h2 className="text-3xl font-display font-bold text-secondary-900 mb-6">Our Story</h2>
+            <div className="prose prose-lg text-secondary-600">
+              <p>
+                At Ultimate Pragmatic Services (UPS), we don't just offer consulting—we drive business success. Since our inception in 2018, we have been a trusted partner for businesses worldwide, delivering expert business management consulting and financial advisory services that transform visions into reality.
               </p>
-              <p className="mb-4">
-              Our team of seasoned business strategists and financial experts is dedicated to one goal: helping you achieve sustainable growth through pragmatic, results-driven solutions. We specialize in supporting small and medium enterprises (SMEs), ensuring they navigate complex regulatory landscapes, secure crucial funding, and optimize operations for long-term success.
+              <p>
+                Our team of seasoned business strategists and financial experts is dedicated to one goal: helping you achieve sustainable growth through pragmatic, results-driven solutions. We specialize in supporting small and medium enterprises (SMEs), ensuring they navigate complex regulatory landscapes, secure crucial funding, and optimize operations for long-term success.
               </p>
-              <p className="mb-4">
-              With an unwavering commitment to excellence, we have helped hundreds of businesses across diverse industries obtain regulatory approvals and raise essential capital—two vital pillars of business expansion.
-              </p>
-              <p className="mb-4">
-              At UPS, we are more than consultants—we are growth architects. Whether you're a startup looking to establish a strong foundation or an existing business seeking to scale, our deep industry expertise, strategic insight, and hands-on approach will empower you to thrive in today’s competitive market.
-              </p>
-              <p className="mb-4">
-              Let us help you turn challenges into opportunities and drive your business to new heights. Your success is our mission.
-              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-soft">
+              <img
+                src="https://as2.ftcdn.net/v2/jpg/01/60/55/69/1000_F_160556920_A3An83NX66D3nOn19v18yCLVTqh3lDLm.jpg"
+                alt="Our Story"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Key Achievements */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-display font-bold text-secondary-900">Our Impact</h2>
+            <p className="mt-4 text-lg text-secondary-600 max-w-3xl mx-auto">
+              We've helped hundreds of businesses achieve their goals through expert guidance and strategic support.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white rounded-2xl p-8 text-center shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Target className="h-6 w-6 text-primary-600" />
               </div>
-    </div>
+              <div className="text-3xl font-bold text-secondary-900 mb-2">$38M+</div>
+              <div className="text-secondary-600">Funding Secured</div>
+            </div>
 
-    {/* Image */}
-    <div className="relative">
-      
+            <div className="bg-white rounded-2xl p-8 text-center shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Users className="h-6 w-6 text-primary-600" />
+              </div>
+              <div className="text-3xl font-bold text-secondary-900 mb-2">85+</div>
+              <div className="text-secondary-600">Satisfied Clients</div>
+            </div>
 
-      <img
-        src="https://as2.ftcdn.net/v2/jpg/01/60/55/69/1000_F_160556920_A3An83NX66D3nOn19v18yCLVTqh3lDLm.jpghttps://as2.ftcdn.net/v2/jpg/02/31/70/07/1000_F_231700737_HJey4izHbNAOrS2eTZkxA4XJr3akMpNT.jpghttps://as2.ftcdn.net/v2/jpg/01/19/05/41/1000_F_119054138_40ip9kSEiH7Wgit6K0ulSmwUvyxxw6Vq.jpg"
-        alt="Our Story"
-        className="w-full h-full object-cover"
-      />
+            <div className="bg-white rounded-2xl p-8 text-center shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-6 w-6 text-primary-600" />
+              </div>
+              <div className="text-3xl font-bold text-secondary-900 mb-2">5</div>
+              <div className="text-secondary-600">Continents Served</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 text-center shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Award className="h-6 w-6 text-primary-600" />
+              </div>
+              <div className="text-3xl font-bold text-secondary-900 mb-2">10+</div>
+              <div className="text-secondary-600">Years Experience</div>
             </div>
           </div>
         </div>
 
         {/* Our Approach */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Image */}
-            <div className="relative">
-              <img
-                src={imageSrcApproach}
-                alt="Our Approach"
-                className="w-full h-full object-cover"
-              />
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-display font-bold text-secondary-900">Our Approach</h2>
+            <p className="mt-4 text-lg text-secondary-600 max-w-3xl mx-auto">
+              We combine industry expertise with innovative strategies to deliver exceptional results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-6">
+                <Target className="h-6 w-6 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-display font-semibold text-secondary-900 mb-4">
+                Client-Focused Strategy
+              </h3>
+              <p className="text-secondary-600">
+                We work closely with our clients to understand their unique needs and develop tailored solutions that drive results.
+              </p>
             </div>
 
-            {/* Text Content */}
-            <div className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Approach</h2>
-              <div className="prose max-w-none text-gray-600">
-                <p className="mb-4">
-                  Our team of young, vibrant professionals work very closely with our clients to bring fresh perspectives and new insights to your projects and businesses. This enables business owners and potential investors to make adequate plans and correctly evaluate the long and short-term economic viability of their business ventures.
-                </p>
-                <p>
-                  At ULTIMATE PRAGMATIC SERVICES, we hold our clients in high esteem as they are the cornerstone of our business and we do not stop working until our clients are 100% satisfied.
-                </p>
+            <div className="bg-white rounded-2xl p-8 shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="h-6 w-6 text-primary-600" />
               </div>
+              <h3 className="text-xl font-display font-semibold text-secondary-900 mb-4">
+                Industry Expertise
+              </h3>
+              <p className="text-secondary-600">
+                Our team brings deep knowledge across various industries, ensuring informed and effective solutions.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-soft">
+              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-6">
+                <TrendingUp className="h-6 w-6 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-display font-semibold text-secondary-900 mb-4">
+                Results-Driven
+              </h3>
+              <p className="text-secondary-600">
+                We focus on delivering measurable outcomes that help our clients achieve their business objectives.
+              </p>
             </div>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="bg-indigo-700 rounded-lg shadow-lg overflow-hidden text-white">
-          <div className="p-8 text-center">
-            {/* <h2 className="text-2xl font-bold mb-4">TRUST THE EXPERTS AT ULTIMATE PRAGMATIC SERVICES</h2> */}
-            <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
-            Your trusted partner for business plans and financial advisory needs.
-            </p>
-            <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
-              Contact us today for a free consultation and see how our expert business services can help you achieve your goals.
-            </p>
-            <Link 
-              to="/contact" 
-              className="inline-block px-6 py-3 bg-white text-indigo-700 rounded-md font-medium hover:bg-gray-100 transition-colors"
-            >
-              Get Started
-            </Link>
-          </div>
+        <div className="bg-primary-900 rounded-2xl p-8 lg:p-12 text-center">
+          <h2 className="text-2xl font-display font-bold text-white mb-4">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-primary-100 mb-8 max-w-2xl mx-auto">
+            Contact us today for a free consultation and see how our expert business services can help you achieve your goals.
+          </p>
+          <Link 
+            to="/contact" 
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-primary-700 bg-white hover:bg-primary-50 transition-colors duration-200"
+          >
+            Get Started
+          </Link>
         </div>
       </div>
     </div>

@@ -1,125 +1,92 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, FileText } from 'lucide-react';
+import { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { Menu, Phone } from 'lucide-react';
+import MobileMenu from './MobileMenu';
+import useScrollPosition from '../hooks/useScrollPosition';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { y: scrollY, direction: scrollDirection } = useScrollPosition();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isScrolled = scrollY > 10;
+  const shouldHideNavbar = scrollY > 100 && scrollDirection === 'down';
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const isActive = (path: string) => location.pathname === path;
+  const navigation = [
+    { name: 'Home', to: '/' },
+    { name: 'Services', to: '/services' },
+    { name: 'About Us', to: '/about' },
+    { name: 'Contact', to: '/contact' },
+    { name: 'Samples', to: '/samples' },
+  ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-      isScrolled ? 'bg-white shadow-soft' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              <FileText className={`h-8 w-8 mr-2 ${isScrolled ? 'text-primary-600' : 'text-white'}`} />
-              <span className={`font-display font-bold text-xl ${
-                isScrolled ? 'text-secondary-900' : 'text-white'
-              }`}>
-                Ultimate Pragmatic Services
-              </span>
+    <>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        } ${
+          shouldHideNavbar ? '-translate-y-full' : 'translate-y-0'
+        }`}
+      >
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0">
+              <h1 className="text-2xl font-display font-bold text-secondary-900">
+                Ultimate<span className="text-[#007ACC]">Services</span>
+              </h1>
             </Link>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            {[
-              { path: '/', label: 'Home' },
-              { path: '/services', label: 'Services' },
-              { path: '/samples', label: 'Sample Documents' },
-              { path: '/about', label: 'About Us' },
-              { path: '/contact', label: 'Contact' },
-            ].map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`nav-link ${
-                  isActive(path)
-                    ? 'text-primary-600 font-semibold'
-                    : isScrolled
-                    ? 'text-secondary-600'
-                    : 'text-white hover:text-primary-100'
-                }`}
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex md:items-center md:space-x-8">
+              {navigation.map((item) => (
+                <NavLink
+                  key={item.name}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors ${
+                      isActive
+                        ? 'text-[#007ACC]'
+                        : 'text-secondary-600 hover:text-[#005999]'
+                    }`
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden md:flex md:items-center">
+              <a
+                href="tel:+1234567890"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-[#007ACC] hover:bg-[#005999] transition-colors"
               >
-                {label}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className={`${
-                isScrolled
-                  ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                  : 'bg-white hover:bg-primary-50 text-primary-600'
-              } px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200`}
-            >
-              Get a Quote
-            </Link>
-          </div>
-          
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleMenu}
-              className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isScrolled ? 'text-secondary-600' : 'text-white'
-              } hover:text-primary-600 focus:outline-none`}
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {[
-              { path: '/', label: 'Home' },
-              { path: '/services', label: 'Services' },
-              { path: '/samples', label: 'Sample Documents' },
-              { path: '/about', label: 'About Us' },
-              { path: '/contact', label: 'Contact' },
-            ].map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                  isActive(path)
-                    ? 'bg-primary-50 text-primary-600'
-                    : 'text-secondary-600 hover:bg-secondary-50 hover:text-primary-600'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
+                <Phone className="h-4 w-4 mr-2" />
+                Call Us
+              </a>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="flex md:hidden">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center p-2 rounded-lg text-secondary-600 hover:text-[#007ACC] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#007ACC]"
+                onClick={() => setIsMobileMenuOpen(true)}
               >
-                {label}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="block px-3 py-2 rounded-lg text-base font-medium bg-primary-600 text-white hover:bg-primary-700"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get a Quote
-            </Link>
+                <span className="sr-only">Open menu</span>
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-    </nav>
+        </nav>
+      </header>
+
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)} 
+      />
+    </>
   );
 };
 

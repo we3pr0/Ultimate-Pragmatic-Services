@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, PresentationIcon, BarChart2, Search, ArrowRight, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
 import HowItWorks from '../components/HowItWorks';
-import Roadmap from '../components/Roadmap';
 import '../styles/testimonials.css';
 import imageSrc from '../photos/Roadmapp.png';
 
@@ -33,7 +32,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-indigo-900 to-indigo-700 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-r from-[#005999] to-[#007ACC] text-white overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -46,44 +45,44 @@ const HomePage = () => {
         
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <svg className="absolute left-0 top-0 h-full w-64 text-indigo-800 transform -translate-x-1/2 opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg className="absolute left-0 top-0 h-full w-64 text-[#006bb3] transform -translate-x-1/2 opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
-          <svg className="absolute right-0 top-0 h-full w-64 text-indigo-800 transform translate-x-1/2 opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg className="absolute right-0 top-0 h-full w-64 text-[#006bb3] transform translate-x-1/2 opacity-20" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon points="50,0 100,100 0,100" />
           </svg>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="text-center">
-            <div className="inline-block mb-6 bg-indigo-600 bg-opacity-30 px-4 py-2 rounded-full backdrop-blur-sm">
+            <div className="inline-block mb-6 bg-[#007ACC] bg-opacity-30 px-4 py-2 rounded-full backdrop-blur-sm">
               <span className="text-sm md:text-base font-medium">Trusted by 85+ clients across 5 continents</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-              First-rate business plan writers for <span className="text-indigo-300">ingenious entrepreneurs</span>
+              First-rate business plan writers for <span className="text-[#66b3ff]">ingenious entrepreneurs</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 text-indigo-100">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 text-[#99ccff]">
               We help entrepreneurs and nonprofits achieve positive growth with compelling business plans, pitch decks, and financial models.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
                 to="/services" 
-                className="px-8 py-4 bg-white text-indigo-900 rounded-md font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                className="px-8 py-4 bg-white text-[#007ACC] rounded-md font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
               >
                 Explore Our Services
               </Link>
               <Link 
                 to="/contact" 
-                className="px-8 py-4 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition-colors border border-indigo-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                className="px-8 py-4 bg-[#007ACC] text-white rounded-md font-medium hover:bg-[#005999] transition-colors border border-[#0066b3] shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
               >
                 Get a Free Consultation
               </Link>
             </div>
             
             {/* Trust indicators */}
-            <div className="mt-16 pt-8 border-t border-indigo-800 border-opacity-30">
-              <p className="text-sm uppercase tracking-wider mb-4 text-indigo-300">Trusted by businesses worldwide</p>
-              <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 items-center text-indigo-200">
+            <div className="mt-16 pt-8 border-t border-[#0066b3] border-opacity-30">
+              <p className="text-sm uppercase tracking-wider mb-4 text-[#66b3ff]">Trusted by businesses worldwide</p>
+              <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 items-center text-[#99ccff]">
                 <div className="flex items-center">
                   <span className="text-2xl font-bold">$38M+</span>
                   <span className="ml-2 text-sm">Funding secured</span>
@@ -114,7 +113,7 @@ const HomePage = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 bg-gray-50">
+      <section id="main-content" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -133,7 +132,7 @@ const HomePage = () => {
                   id={service.id}
                   title={service.title}
                   description={service.description.substring(0, 120) + '...'}
-                  icon={<service.icon className="h-6 w-6" />}
+                  icon={service.icon}
                 />
               )
             ))}
@@ -142,7 +141,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link 
               to="/services" 
-              className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800"
+              className="inline-flex items-center text-[#007ACC] font-medium hover:text-[#005999]"
             >
               View all services <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
@@ -151,24 +150,24 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-indigo-800 text-white py-16">
+      <section className="bg-[#007ACC] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-4xl font-bold">$38M+</p>
-              <p className="mt-2 text-indigo-200">Funding secured for clients</p>
+              <p className="mt-2 text-[#99ccff]">Funding secured for clients</p>
             </div>
             <div>
               <p className="text-4xl font-bold">85+</p>
-              <p className="mt-2 text-indigo-200">Clients across 5 continents</p>
+              <p className="mt-2 text-[#99ccff]">Clients across 5 continents</p>
             </div>
             <div>
               <p className="text-4xl font-bold">10+</p>
-              <p className="mt-2 text-indigo-200">Years of experience</p>
+              <p className="mt-2 text-[#99ccff]">Years of experience</p>
             </div>
             <div>
               <p className="text-4xl font-bold">100%</p>
-              <p className="mt-2 text-indigo-200">Client satisfaction</p>
+              <p className="mt-2 text-[#99ccff]">Client satisfaction</p>
             </div>
           </div>
         </div>
@@ -181,7 +180,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Realistic Projection */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+            <div className="w-12 h-12 bg-[#e6f3ff] rounded-full flex items-center justify-center text-[#007ACC] mb-4">
               <CheckCircle className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Realistic Projection</h3>
@@ -192,7 +191,7 @@ const HomePage = () => {
 
           {/* We Know Your Audience */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+            <div className="w-12 h-12 bg-[#e6f3ff] rounded-full flex items-center justify-center text-[#007ACC] mb-4">
               <Users className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">We Know Your Audience</h3>
@@ -203,7 +202,7 @@ const HomePage = () => {
 
           {/* First-Hand Experience */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+            <div className="w-12 h-12 bg-[#e6f3ff] rounded-full flex items-center justify-center text-[#007ACC] mb-4">
               <Award className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">First-Hand Experience</h3>
@@ -214,7 +213,7 @@ const HomePage = () => {
 
           {/* Free After-Sales Services */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+            <div className="w-12 h-12 bg-[#e6f3ff] rounded-full flex items-center justify-center text-[#007ACC] mb-4">
               <TrendingUp className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Free After-Sales Services</h3>
@@ -243,15 +242,23 @@ const HomePage = () => {
                 <div
                   key={testimonial.id}
                   className={`testimonial-flip-card ${
-                    index === currentTestimonialIndex ? 'visible' : ''
-                  }`}
+                    index === currentTestimonialIndex ? 'visible opacity-100' : 'opacity-0'
+                  } transition-opacity duration-500`}
                 >
-                  <TestimonialCard
-                    quote={testimonial.quote}
-                    author={testimonial.author}
-                    company={testimonial.company}
-                    rating={testimonial.rating}
-                  />
+                  <div className="bg-white p-6 rounded-lg shadow-md border border-[#e6f3ff]">
+                    <TestimonialCard
+                      quote={testimonial.quote}
+                      author={testimonial.author}
+                      company={testimonial.company}
+                      rating={testimonial.rating}
+                    />
+                    <div className="text-[#007ACC]">
+                      {/* Rating stars */}
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <span key={i} className="text-[#007ACC]">★</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -271,7 +278,7 @@ const HomePage = () => {
               />
 
       {/* CTA Section */}
-      <section className="bg-indigo-700 text-white py-16">
+      <section className="bg-[#007ACC] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold sm:text-4xl mb-6">
             Ready to take your business to the next level?
@@ -281,7 +288,7 @@ const HomePage = () => {
           </p>
           <Link 
             to="/contact" 
-            className="px-8 py-4 bg-white text-indigo-700 rounded-md font-medium hover:bg-gray-100 transition-colors inline-block"
+            className="px-8 py-4 bg-white text-[#007ACC] rounded-md font-medium hover:bg-gray-100 transition-colors inline-block"
           >
             Schedule a Free Consultation
           </Link>
