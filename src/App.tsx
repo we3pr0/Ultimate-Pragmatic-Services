@@ -7,6 +7,7 @@ import ServicesPage from './pages/ServicesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ServiceDetail from './pages/ServiceDetail';
+import SurveyPage from './pages/SurveyPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/samples" element={<SurveyPage />} />
           </Routes>
         </main>
         <Footer />

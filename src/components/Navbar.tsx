@@ -23,6 +23,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="hover:text-indigo-200 px-3 py-2 text-sm font-medium">Home</Link>
             <Link to="/services" className="hover:text-indigo-200 px-3 py-2 text-sm font-medium">Services</Link>
+            <Link to="/samples" className="hover:text-indigo-200 px-3 py-2 text-sm font-medium">Sample Documents</Link>
             <Link to="/about" className="hover:text-indigo-200 px-3 py-2 text-sm font-medium">About Us</Link>
             <Link to="/contact" className="hover:text-indigo-200 px-3 py-2 text-sm font-medium">Contact</Link>
             <Link to="/contact" className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-medium">
@@ -58,6 +59,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Services
+            </Link>
+            <Link 
+              to="/samples" 
+              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-800"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sample Documents
             </Link>
             <Link 
               to="/about" 
