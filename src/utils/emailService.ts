@@ -27,7 +27,7 @@ export const sendConfirmationEmail = async (data: EmailData) => {
 
     return { success: true, result };
   } catch (error) {
-    console.error('Email sending failed:', error);
+    console.error('Request failed:', error);
     return { success: false, error };
   }
 };

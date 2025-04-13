@@ -78,10 +78,10 @@ const ServiceDetail = () => {
                 Request a Quote
               </Link>
               <Link 
-                to="/contact" 
+                to="/samples" 
                 className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md font-medium hover:bg-gray-50 transition-colors text-center"
               >
-                Contact Us
+                Request a Sample
               </Link>
             </div>
           </div>

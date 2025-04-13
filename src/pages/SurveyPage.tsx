@@ -33,10 +33,10 @@ const SurveyPage = () => {
       if (result.success) {
         setIsSubmitted(true);
       } else {
-        setError('Failed to send email. Please try again later.');
+        setError('Unable to process your request at this time. Please try again later.');
       }
     } catch (err) {
-      setError('An unexpected error occurred. Please try again later.');
+      setError('A technical issue occurred. Please try again in a few minutes.');
     } finally {
       setIsSubmitting(false);
     }

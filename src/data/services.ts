@@ -153,7 +153,7 @@ export const services: Service[] = [
       'Faster Delivery Duration – Available'
     ],
     icon: LineChart,
-    image: "https://as2.ftcdn.net/v2/jpg/00/45/34/81/1000_F_45348143_9gn1ptcqIKILPm1nGI0UUeC2TQoWTW1S.jpg",
+    image: "https://www.shutterstock.com/image-illustration/threedimensional-graph-models-on-tablet-260nw-2317917031.jpg",
     illustrativeImage: "../../photos/undraw_business-plan_wv9q.svg" // New illustrative image
   },
   {
@@ -170,7 +170,7 @@ export const services: Service[] = [
       'Faster Delivery Duration – Available'
     ],
     icon: Search,
-    image: "https://cdn-icons-png.flaticon.com/512/2921/2921234.png",
+    image: "https://www.jeffbullas.com/wp-content/uploads/2020/06/Startup-Funding-%E2%80%93-A-Comprehensive-Guide-for-Entrepreneurs.jpg",
     illustrativeImage: "https://via.placeholder.com/600x400?text=Startup+Feasibility+Study" // New illustrative image
   },
   {
@@ -187,7 +187,7 @@ export const services: Service[] = [
       'Faster Delivery Duration – Available'
     ],
     icon: Code,
-    image: "https://as1.ftcdn.net/v2/jpg/01/54/16/82/1000_F_154168217_GqUWQuuZiGByogp8XF0TkRrFpse4sS2y.jpg",
+    image: "https://assets.isu.pub/document-structure/241009232238-d53fed299d6b3d787c47a6c98e0e1edd/v1/a0e3b202ee877c285fa953120378c8c5.jpeg",
     illustrativeImage: "https://as1.ftcdn.net/v2/jpg/00/99/59/22/1000_F_99592236_B1cZL1h44chDx3W6I2AfePC6scfzwaNx.jpg" // New illustrative image
   },
   {
