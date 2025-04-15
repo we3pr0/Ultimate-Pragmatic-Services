@@ -62,12 +62,12 @@ const Footer = () => {
             <h3 className="font-display font-semibold text-white mb-4">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/business-plans" className="text-[#99ccff] hover:text-[#66b3ff] transition-colors text-sm">
+                <Link to="/services/business-plan-investors" className="text-[#99ccff] hover:text-[#66b3ff] transition-colors text-sm">
                   Business Plans
                 </Link>
               </li>
               <li>
-                <Link to="/services/pitch-decks" className="text-[#99ccff] hover:text-[#66b3ff] transition-colors text-sm">
+                <Link to="/services/pitch-deck-investors" className="text-[#99ccff] hover:text-[#66b3ff] transition-colors text-sm">
                   Pitch Decks
                 </Link>
               </li>
@@ -77,7 +77,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/feasibility-studies" className="text-[#99ccff] hover:text-[#66b3ff] transition-colors text-sm">
+                <Link to="/services/feasibility-study-startup" className="text-[#99ccff] hover:text-[#66b3ff] transition-colors text-sm">
                   Feasibility Studies
                 </Link>
               </li>
