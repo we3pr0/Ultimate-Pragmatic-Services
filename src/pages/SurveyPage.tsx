@@ -7,6 +7,7 @@ const SurveyPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
+    form: '',
     fullName: '',
     email: '',
     phone: '',

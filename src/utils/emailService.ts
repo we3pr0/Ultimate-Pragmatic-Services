@@ -1,6 +1,7 @@
 import emailjs from '@emailjs/browser';
 
 interface EmailData {
+  form: string;
   fullName: string;
   email: string;
   phone: string;
@@ -11,6 +12,7 @@ interface EmailData {
 export const sendConfirmationEmail = async (data: EmailData) => {
   try {
     const templateParams = {
+      form: "Survey",
       to_email: data.email,
       to_name: data.fullName,
       sample_type: data.sampleType,

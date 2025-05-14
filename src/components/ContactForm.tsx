@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Send, Loader } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import useFocusTrap from '../hooks/useFocusTrap';
+
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -27,9 +33,28 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('EmailJS configuration is missing');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          form: "Contact Us",
+          from_email: formData.email,
+          phone_number: formData.phone,
+          service_requested: formData.service,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
       setSubmitStatus('success');
       setFormData({
         name: '',
@@ -39,6 +64,7 @@ const ContactForm = () => {
         message: ''
       });
     } catch (error) {
+      console.error('Failed to send email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
